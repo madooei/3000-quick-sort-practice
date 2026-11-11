@@ -12,7 +12,7 @@ public final class LomutoPartition {
   // a[p+1..hi] is greater than the pivot. Assumes lo <= hi.
   public static int lomutoPartition(int[] a, int lo, int hi) {
     int pivot = a[hi];              // the last element is the pivot
-    int mark = lo;                  // a[lo..mark) is known to be <= pivot
+    int mark = lo;                  // a[lo..mark-1] is known to be <= pivot
 
     for (int i = lo; i < hi; i++) {
       if (a[i] <= pivot) {
