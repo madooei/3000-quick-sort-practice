@@ -5,6 +5,6 @@ public class SortColorsCountingTest extends SortColorsTest {
 
   @Override
   protected void sort(int[] colors) {
-    SortColors.sortColorsCounting(colors);
+    SortColorsCounting.sortColors(colors);
   }
 }

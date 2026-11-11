@@ -1,6 +1,7 @@
 package practice;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -28,13 +29,13 @@ public class LomutoPartitionTest {
   }
 
   @Test
-  public void wholeArrayUnsorted() {
-    checkProperty(new int[] {3, 5, 8, 1, 2, 9, 4, 7, 6}, 0, 8);
+  public void singleElementSlice() {
+    checkProperty(new int[] {5}, 0, 0);
   }
 
   @Test
-  public void singleElementSlice() {
-    checkProperty(new int[] {5}, 0, 0);
+  public void allEqualValues() {
+    checkProperty(new int[] {4, 4, 4, 4}, 0, 3);
   }
 
   @Test
@@ -48,13 +49,19 @@ public class LomutoPartitionTest {
   }
 
   @Test
-  public void allEqualValues() {
-    checkProperty(new int[] {4, 4, 4, 4}, 0, 3);
+  public void wholeArrayUnsorted() {
+    checkProperty(new int[] {3, 5, 8, 1, 2, 9, 4, 7, 6}, 0, 8);
   }
 
   @Test
-  public void innerSliceOnly() {
-    // Partition just the middle; the ends must be left untouched by the property.
+  public void innerSliceSatisfiesTheProperty() {
     checkProperty(new int[] {9, 3, 1, 5, 2, 8}, 1, 4);
+  }
+
+  @Test
+  public void innerSliceLeavesValuesOutsideItAlone() {
+    int[] a = {9, 3, 1, 5, 2, 8};
+    LomutoPartition.lomutoPartition(a, 1, 4);
+    assertArrayEquals(new int[] {9, 1, 2, 5, 3, 8}, a);
   }
 }

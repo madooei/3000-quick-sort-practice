@@ -30,8 +30,18 @@ public abstract class SortColorsTest {
   }
 
   @Test
-  public void mixedColors() {
-    check(new int[] {2, 0, 2, 1, 1, 0}, new int[] {0, 0, 1, 1, 2, 2});
+  public void allZeros() {
+    check(new int[] {0, 0, 0}, new int[] {0, 0, 0});
+  }
+
+  @Test
+  public void allTwos() {
+    check(new int[] {2, 2, 2}, new int[] {2, 2, 2});
+  }
+
+  @Test
+  public void zeroAfterOne() {
+    check(new int[] {1, 0}, new int[] {0, 1});
   }
 
   @Test
@@ -45,12 +55,12 @@ public abstract class SortColorsTest {
   }
 
   @Test
-  public void allZeros() {
-    check(new int[] {0, 0, 0}, new int[] {0, 0, 0});
+  public void zerosAfterOnes() {
+    check(new int[] {1, 1, 0, 0}, new int[] {0, 0, 1, 1});
   }
 
   @Test
-  public void allTwos() {
-    check(new int[] {2, 2, 2}, new int[] {2, 2, 2});
+  public void mixedColors() {
+    check(new int[] {2, 0, 2, 1, 1, 0}, new int[] {0, 0, 1, 1, 2, 2});
   }
 }

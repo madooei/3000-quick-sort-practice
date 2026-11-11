@@ -19,7 +19,8 @@ code/
     main/
       practice/
         QuickSelect.java                # kth largest by narrowing partitions
-        SortColors.java                 # counting pass and Dutch national flag
+        SortColorsCounting.java         # counting pass
+        SortColorsThreeWay.java         # Dutch national flag, one pass
         LomutoPartition.java            # one-marker sweep partition
     test/
       practice/
@@ -40,7 +41,8 @@ code/
 ## What's here
 
 - `practice.QuickSelect` — `findKthLargest`, which partitions and then continues into only the side that holds the answer.
-- `practice.SortColors` — `sortColorsCounting`, which tallies the colors and rewrites the array, and `sortColorsThreeWay`, a single-pass three-way partition with three markers.
+- `practice.SortColorsCounting` — `sortColors`, which tallies the colors and rewrites the array.
+- `practice.SortColorsThreeWay` — `sortColors`, a single-pass three-way partition with three markers.
 - `practice.LomutoPartition` — `lomutoPartition`, which partitions a slice with one forward sweep.
 - `practice.QuickSelectTest` and `practice.LomutoPartitionTest` — one suite per problem.
 - `practice.SortColorsTest` and its two subclasses — the sort colors scenarios, run once per solution.
