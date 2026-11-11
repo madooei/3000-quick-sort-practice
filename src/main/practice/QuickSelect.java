@@ -10,21 +10,8 @@ public final class QuickSelect {
   // Returns the kth largest value of numbers, where k = 1 is the largest.
   // Rearranges numbers. Assumes numbers is not empty and 1 <= k <= numbers.length.
   public static int findKthLargest(int[] numbers, int k) {
-    int target = numbers.length - k;   // the kth largest sits here once sorted
-    int lo = 0;
-    int hi = numbers.length - 1;
-
-    while (lo < hi) {
-      int p = partition(numbers, lo, hi);
-      if (p == target) {
-        return numbers[p];             // pivot landed exactly on the answer
-      } else if (p < target) {
-        lo = p + 1;                     // answer is in the right side
-      } else {
-        hi = p - 1;                     // answer is in the left side
-      }
-    }
-    return numbers[lo];                 // slice narrowed to a single element
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Partitions a[lo..hi] around a[hi] and returns the pivot's final index.
