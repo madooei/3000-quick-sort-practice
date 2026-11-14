@@ -11,10 +11,10 @@ public final class SortColorsCounting {
   // Assumes every element of colors is 0, 1, or 2.
   public static void sortColors(int[] colors) {
     int zeros = 0, ones = 0, twos = 0;
-    for (int c : colors) {          // first pass: tally each color
-      if (c == 0) {
+    for (int color : colors) {      // first pass: tally each color
+      if (color == 0) {
         zeros++;
-      } else if (c == 1) {
+      } else if (color == 1) {
         ones++;
       } else {
         twos++;

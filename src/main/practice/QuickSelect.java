@@ -15,46 +15,46 @@ public final class QuickSelect {
     int hi = numbers.length - 1;
 
     while (lo < hi) {
-      int p = partition(numbers, lo, hi);
-      if (p == target) {
-        return numbers[p];             // pivot landed exactly on the answer
-      } else if (p < target) {
-        lo = p + 1;                     // answer is in the right side
+      int pivotIndex = partition(numbers, lo, hi);
+      if (pivotIndex == target) {
+        return numbers[pivotIndex];      // pivot landed exactly on the answer
+      } else if (pivotIndex < target) {
+        lo = pivotIndex + 1;             // answer is in the right side
       } else {
-        hi = p - 1;                     // answer is in the left side
+        hi = pivotIndex - 1;             // answer is in the left side
       }
     }
-    return numbers[lo];                 // slice narrowed to a single element
+    return numbers[lo];                  // slice narrowed to a single element
   }
 
-  // Partitions a[lo..hi] around a[hi] and returns the pivot's final index.
+  // Partitions arr[lo..hi] around arr[hi] and returns the pivot's final index.
   // Pre: lo <= hi.
-  private static int partition(int[] a, int lo, int hi) {
-    int pivot = a[hi];
-    int l = lo;
-    int r = hi - 1;
+  private static int partition(int[] arr, int lo, int hi) {
+    int pivot = hi;
+    int left = lo;
+    int right = hi - 1;
 
-    while (l <= r) {
-      while (l <= r && a[l] < pivot) {
-        l++;
+    while (left <= right) {
+      while (left <= right && arr[left] < arr[pivot]) {
+        left++;
       }
-      while (l <= r && a[r] > pivot) {
-        r--;
+      while (left <= right && arr[right] > arr[pivot]) {
+        right--;
       }
-      if (l <= r) {
-        swap(a, l, r);
-        l++;
-        r--;
+      if (left <= right) {
+        swap(arr, left, right);
+        left++;
+        right--;
       }
     }
 
-    swap(a, l, hi);
-    return l;
+    swap(arr, left, pivot);
+    return left;
   }
 
-  private static void swap(int[] a, int i, int j) {
-    int temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
+  private static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
   }
 }

@@ -7,27 +7,28 @@ public final class LomutoPartition {
     // This class should not be instantiated!
   }
 
-  // Partitions a[lo..hi] around a[hi] and returns the pivot's final index p.
-  // Every value in a[lo..p-1] is at most the pivot, and every value in
-  // a[p+1..hi] is greater than the pivot. Assumes lo <= hi.
-  public static int lomutoPartition(int[] a, int lo, int hi) {
-    int pivot = a[hi];              // the last element is the pivot
-    int mark = lo;                  // a[lo..mark-1] is known to be <= pivot
+  // Partitions arr[lo..hi] around arr[hi] and returns pivotIndex, the pivot's
+  // final index. Every value in arr[lo..pivotIndex-1] is at most the pivot,
+  // and every value in arr[pivotIndex+1..hi] is greater than the pivot.
+  // Assumes lo <= hi.
+  public static int lomutoPartition(int[] arr, int lo, int hi) {
+    int pivot = hi;                 // index of the pivot, the last element
+    int mark = lo;                  // arr[lo..mark-1] is known to be <= pivot
 
     for (int i = lo; i < hi; i++) {
-      if (a[i] <= pivot) {
-        swap(a, i, mark);           // grow the <= region by one
+      if (arr[i] <= arr[pivot]) {
+        swap(arr, i, mark);         // grow the <= region by one
         mark++;
       }
     }
 
-    swap(a, mark, hi);              // drop the pivot just after that region
+    swap(arr, mark, pivot);         // drop the pivot just after that region
     return mark;
   }
 
-  private static void swap(int[] a, int i, int j) {
-    int temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
+  private static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
   }
 }
