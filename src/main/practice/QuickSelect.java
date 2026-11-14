@@ -14,34 +14,34 @@ public final class QuickSelect {
     throw new UnsupportedOperationException("TODO: Implement me");
   }
 
-  // Partitions a[lo..hi] around a[hi] and returns the pivot's final index.
+  // Partitions arr[lo..hi] around arr[hi] and returns the pivot's final index.
   // Pre: lo <= hi.
-  private static int partition(int[] a, int lo, int hi) {
-    int pivot = a[hi];
-    int l = lo;
-    int r = hi - 1;
+  private static int partition(int[] arr, int lo, int hi) {
+    int pivot = hi;
+    int left = lo;
+    int right = hi - 1;
 
-    while (l <= r) {
-      while (l <= r && a[l] < pivot) {
-        l++;
+    while (left <= right) {
+      while (left <= right && arr[left] < arr[pivot]) {
+        left++;
       }
-      while (l <= r && a[r] > pivot) {
-        r--;
+      while (left <= right && arr[right] > arr[pivot]) {
+        right--;
       }
-      if (l <= r) {
-        swap(a, l, r);
-        l++;
-        r--;
+      if (left <= right) {
+        swap(arr, left, right);
+        left++;
+        right--;
       }
     }
 
-    swap(a, l, hi);
-    return l;
+    swap(arr, left, pivot);
+    return left;
   }
 
-  private static void swap(int[] a, int i, int j) {
-    int temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
+  private static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
   }
 }

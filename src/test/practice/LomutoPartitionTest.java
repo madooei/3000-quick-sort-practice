@@ -12,19 +12,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class LomutoPartitionTest {
 
-  // Partitions a[lo..hi] and checks the Lomuto property around the returned mark.
+  // Partitions arr[lo..hi] and checks the Lomuto property around the returned mark.
   private void checkProperty(int[] input, int lo, int hi) {
     int pivot = input[hi];
-    int[] a = input.clone();
-    int mark = LomutoPartition.lomutoPartition(a, lo, hi);
+    int[] arr = input.clone();
+    int mark = LomutoPartition.lomutoPartition(arr, lo, hi);
 
     assertTrue(lo <= mark && mark <= hi, "mark should stay within the slice");
-    assertEquals(pivot, a[mark], "pivot value should sit at the returned index");
+    assertEquals(pivot, arr[mark], "pivot value should sit at the returned index");
     for (int i = lo; i < mark; i++) {
-      assertTrue(a[i] <= pivot, "left of mark should be <= pivot at index " + i);
+      assertTrue(arr[i] <= pivot, "left of mark should be <= pivot at index " + i);
     }
     for (int i = mark + 1; i <= hi; i++) {
-      assertTrue(a[i] > pivot, "right of mark should be > pivot at index " + i);
+      assertTrue(arr[i] > pivot, "right of mark should be > pivot at index " + i);
     }
   }
 
@@ -60,8 +60,8 @@ public class LomutoPartitionTest {
 
   @Test
   public void innerSliceLeavesValuesOutsideItAlone() {
-    int[] a = {9, 3, 1, 5, 2, 8};
-    LomutoPartition.lomutoPartition(a, 1, 4);
-    assertArrayEquals(new int[] {9, 1, 2, 5, 3, 8}, a);
+    int[] arr = {9, 3, 1, 5, 2, 8};
+    LomutoPartition.lomutoPartition(arr, 1, 4);
+    assertArrayEquals(new int[] {9, 1, 2, 5, 3, 8}, arr);
   }
 }
