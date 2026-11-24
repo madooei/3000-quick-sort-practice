@@ -11,7 +11,7 @@ public final class LomutoPartition {
   // final index. Every value in arr[lo..pivotIndex-1] is at most the pivot,
   // and every value in arr[pivotIndex+1..hi] is greater than the pivot.
   // Assumes lo <= hi.
-  public static int lomutoPartition(int[] arr, int lo, int hi) {
+  public static int partition(int[] arr, int lo, int hi) {
     // TODO: Implement me
     throw new UnsupportedOperationException("TODO: Implement me");
   }

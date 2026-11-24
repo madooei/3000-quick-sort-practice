@@ -16,7 +16,7 @@ public class LomutoPartitionTest {
   private void checkProperty(int[] input, int lo, int hi) {
     int pivot = input[hi];
     int[] arr = input.clone();
-    int mark = LomutoPartition.lomutoPartition(arr, lo, hi);
+    int mark = LomutoPartition.partition(arr, lo, hi);
 
     assertTrue(lo <= mark && mark <= hi, "mark should stay within the slice");
     assertEquals(pivot, arr[mark], "pivot value should sit at the returned index");
@@ -61,7 +61,7 @@ public class LomutoPartitionTest {
   @Test
   public void innerSliceLeavesValuesOutsideItAlone() {
     int[] arr = {9, 3, 1, 5, 2, 8};
-    LomutoPartition.lomutoPartition(arr, 1, 4);
+    LomutoPartition.partition(arr, 1, 4);
     assertArrayEquals(new int[] {9, 1, 2, 5, 3, 8}, arr);
   }
 }

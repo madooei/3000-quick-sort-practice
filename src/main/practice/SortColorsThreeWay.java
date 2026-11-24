@@ -9,7 +9,7 @@ public final class SortColorsThreeWay {
 
   // Sorts colors in ascending order in a single pass, by moving values within
   // the array. Assumes every element of colors is 0, 1, or 2.
-  public static void sortColors(int[] colors) {
+  public static void sort(int[] colors) {
     // TODO: Implement me
     throw new UnsupportedOperationException("TODO: Implement me");
   }

@@ -15,7 +15,7 @@ public final class SortColorsThreeWayDemo {
     System.out.println("before: " + Arrays.toString(colors));
 
     // Expect [0, 0, 1, 1, 2, 2].
-    SortColorsThreeWay.sortColors(colors);
+    SortColorsThreeWay.sort(colors);
     System.out.println("after:  " + Arrays.toString(colors));
   }
 }
