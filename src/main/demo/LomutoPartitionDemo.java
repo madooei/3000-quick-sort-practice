@@ -1,6 +1,7 @@
-package practice;
+package demo;
 
 import java.util.Arrays;
+import practice.LomutoPartition;
 
 /** A demo of LomutoPartition on the example the notes trace. */
 public final class LomutoPartitionDemo {

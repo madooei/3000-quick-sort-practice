@@ -19,12 +19,13 @@ code/
     main/
       practice/
         QuickSelect.java                # kth largest by narrowing partitions
-        QuickSelectDemo.java
         SortColorsCounting.java         # counting pass
-        SortColorsCountingDemo.java
         SortColorsThreeWay.java         # Dutch national flag, one pass
-        SortColorsThreeWayDemo.java
         LomutoPartition.java            # one-marker sweep partition
+      demo/                             # one demo per solution class
+        QuickSelectDemo.java
+        SortColorsCountingDemo.java
+        SortColorsThreeWayDemo.java
         LomutoPartitionDemo.java
     test/
       practice/
@@ -42,7 +43,7 @@ code/
 
 - `scripts/test.sh` — compiles everything and runs the full JUnit suite.
 - `scripts/test.sh practice.SortColorsThreeWayTest` — compiles everything and runs only that test class.
-- `scripts/run.sh practice.QuickSelectDemo` — compiles everything and runs that one demo. Every problem class has its own demo, `<Class>Demo`.
+- `scripts/run.sh demo.QuickSelectDemo` — compiles everything and runs that one demo. Every problem class has its own demo, `<Class>Demo`.
 
 ## What's here
 
@@ -52,4 +53,4 @@ code/
 - `practice.LomutoPartition` — `lomutoPartition`, which partitions a slice with one forward sweep.
 - `practice.QuickSelectTest` and `practice.LomutoPartitionTest` — one suite per problem.
 - `practice.SortColorsTest` and its two subclasses — the sort colors scenarios, run once per solution.
-- `practice.QuickSelectDemo`, `practice.SortColorsCountingDemo`, `practice.SortColorsThreeWayDemo`, and `practice.LomutoPartitionDemo` — one demo per solution class, each on an example from the notes.
+- `demo.QuickSelectDemo`, `demo.SortColorsCountingDemo`, `demo.SortColorsThreeWayDemo`, and `demo.LomutoPartitionDemo` — one demo per solution class, each on an example from the notes.

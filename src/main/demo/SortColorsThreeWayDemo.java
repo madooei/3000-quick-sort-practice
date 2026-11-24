@@ -1,11 +1,12 @@
-package practice;
+package demo;
 
 import java.util.Arrays;
+import practice.SortColorsThreeWay;
 
-/** A demo of SortColorsCounting on the notes' first example. */
-public final class SortColorsCountingDemo {
+/** A demo of SortColorsThreeWay on the notes' first example. */
+public final class SortColorsThreeWayDemo {
 
-  private SortColorsCountingDemo() {
+  private SortColorsThreeWayDemo() {
     // This class should not be instantiated!
   }
 
@@ -14,7 +15,7 @@ public final class SortColorsCountingDemo {
     System.out.println("before: " + Arrays.toString(colors));
 
     // Expect [0, 0, 1, 1, 2, 2].
-    SortColorsCounting.sortColors(colors);
+    SortColorsThreeWay.sortColors(colors);
     System.out.println("after:  " + Arrays.toString(colors));
   }
 }
