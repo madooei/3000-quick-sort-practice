@@ -1,6 +1,7 @@
-package practice;
+package demo;
 
 import java.util.Arrays;
+import practice.QuickSelect;
 
 /** A demo of QuickSelect on the example the notes trace. */
 public final class QuickSelectDemo {
