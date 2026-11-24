@@ -15,7 +15,7 @@ public final class LomutoPartitionDemo {
     System.out.println("before: " + Arrays.toString(arr));
 
     // The pivot is 4, the last element. Expect [3, 1, 2, 4, 5] and index 3.
-    int pivotIndex = LomutoPartition.lomutoPartition(arr, 0, arr.length - 1);
+    int pivotIndex = LomutoPartition.partition(arr, 0, arr.length - 1);
     System.out.println("after:  " + Arrays.toString(arr));
     System.out.println("pivot index: " + pivotIndex);
   }

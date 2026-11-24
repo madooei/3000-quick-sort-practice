@@ -19,19 +19,16 @@ code/
     main/
       practice/
         QuickSelect.java                # kth largest by narrowing partitions
-        SortColorsCounting.java         # counting pass
         SortColorsThreeWay.java         # Dutch national flag, one pass
         LomutoPartition.java            # one-marker sweep partition
       demo/                             # one demo per solution class
         QuickSelectDemo.java
-        SortColorsCountingDemo.java
         SortColorsThreeWayDemo.java
         LomutoPartitionDemo.java
     test/
       practice/
         QuickSelectTest.java
-        SortColorsTest.java             # the scenarios both solutions share
-        SortColorsCountingTest.java     # runs them against the counting solution
+        SortColorsTest.java             # the sort colors scenarios
         SortColorsThreeWayTest.java     # runs them against the three-way solution
         LomutoPartitionTest.java
   scripts/
@@ -48,9 +45,8 @@ code/
 ## What's here
 
 - `practice.QuickSelect` — `findKthLargest`, which partitions and then continues into only the side that holds the answer.
-- `practice.SortColorsCounting` — `sortColors`, which tallies the colors and rewrites the array.
-- `practice.SortColorsThreeWay` — `sortColors`, a single-pass three-way partition with three markers.
-- `practice.LomutoPartition` — `lomutoPartition`, which partitions a slice with one forward sweep.
+- `practice.SortColorsThreeWay` — `sort`, a single-pass three-way partition with three markers.
+- `practice.LomutoPartition` — `partition`, which partitions a slice with one forward sweep.
 - `practice.QuickSelectTest` and `practice.LomutoPartitionTest` — one suite per problem.
-- `practice.SortColorsTest` and its two subclasses — the sort colors scenarios, run once per solution.
-- `demo.QuickSelectDemo`, `demo.SortColorsCountingDemo`, `demo.SortColorsThreeWayDemo`, and `demo.LomutoPartitionDemo` — one demo per solution class, each on an example from the notes.
+- `practice.SortColorsTest` and its subclass `practice.SortColorsThreeWayTest` — the sort colors scenarios, run against the three-way solution.
+- `demo.QuickSelectDemo`, `demo.SortColorsThreeWayDemo`, and `demo.LomutoPartitionDemo` — one demo per solution class, each on an example from the notes.

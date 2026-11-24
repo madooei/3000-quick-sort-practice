@@ -5,6 +5,6 @@ public class SortColorsThreeWayTest extends SortColorsTest {
 
   @Override
   protected void sort(int[] colors) {
-    SortColorsThreeWay.sortColors(colors);
+    SortColorsThreeWay.sort(colors);
   }
 }
