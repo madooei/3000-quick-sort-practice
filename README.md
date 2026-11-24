@@ -42,7 +42,7 @@ code/
 - `scripts/test.sh practice.SortColorsThreeWayTest` — compiles everything and runs only that test class.
 - `scripts/run.sh demo.QuickSelectDemo` — compiles everything and runs that one demo. Every problem class has its own demo, `<Class>Demo`.
 
-## What's here
+## Contents
 
 - `practice.QuickSelect` — `findKthLargest`, which partitions and then continues into only the side that holds the answer.
 - `practice.SortColorsThreeWay` — `sort`, a single-pass three-way partition with three markers.
